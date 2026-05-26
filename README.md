@@ -18,7 +18,8 @@ At this stage, you should have a copy of the algorithm on your local computer. C
 Once you have confirmed that cloning was successful, we can run our code.
 1. Open your terminal. Copy the following: cd ~/Desktop/auxin_calculator
 2. Confirm that you are in the auxin_calculator directory. Your terminal should look something like this: (base) rachelsang@wifi-10-44-83-121 auxin_calculator %
-3. Copy the following into your terminal: python3 auxin_calculator.py
+3. Install the required packages. Copy the following: pip3 install -r requirements.txt
+4. Copy the following into your terminal: python3 auxin_calculator.py
 
 Follow the on-screen instructions to get your drug recipes.
 
