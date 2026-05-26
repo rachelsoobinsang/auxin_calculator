@@ -1,4 +1,5 @@
 import math
+import os
 import pandas as pd
 
 standard_recipe = {
@@ -16,6 +17,8 @@ max_recipe = {
     'fkc': 30,
     '1M auxin': 20,
 }
+
+os.makedirs('outputs', exist_ok=True)
 
 def get_stock_concentration(plate_concentration):
     log_val = math.log10(plate_concentration)
@@ -81,8 +84,7 @@ while True:
 
 if all_results:
     df = pd.DataFrame(all_results).fillna(0)
-    df.to_csv(f'{filename}.csv', index=False)
-    print(f'Results saved to {filename}.csv')
-
+    df.to_csv(f'outputs/{filename}.csv', index=False)
+    print(f'Results saved to outputs/{filename}.csv')
 else:
     print('No results to save.')
