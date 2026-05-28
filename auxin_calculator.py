@@ -13,6 +13,11 @@ no_auxin_recipe = {
     'm9': 20,
 }
 
+max_recipe = {
+    'fkc': 30,
+    '1M auxin': 20,
+}
+
 min_lifespan_recipe = {
     'kc': 16,
     'm9': 24,
@@ -22,6 +27,12 @@ lifespan_recipe = {
     'kc': 16,
     'm9': 16,
     'auxin': 8,
+}
+
+max_lifespan_recipe = {
+    'kc': 16,
+    'm9': 8,
+    '1M auxin': 16
 }
 
 os.makedirs('outputs', exist_ok=True)
@@ -40,6 +51,8 @@ def get_m9_auxin_volumes(plate_concentration, total_volume=20):
 def recipe_calculator(plate_concentration, plates):
     if plate_concentration == 0:
         scaled_recipe = {key: value * plates for key, value in no_auxin_recipe.items()}
+    if plate_concentration == 2:
+        scaled_recipe = {key: value * plates for key, value in max_recipe.items()}
     else:
         stock_concentration = get_stock_concentration(plate_concentration)
         auxin_volume, m9_volume = get_m9_auxin_volumes(plate_concentration, total_volume=20)
@@ -53,6 +66,8 @@ def recipe_calculator(plate_concentration, plates):
 def lifespan_recipe_calculator(plate_concentration, plates):
     if plate_concentration == 0:
         scaled_recipe = {key: value * plates for key, value in min_lifespan_recipe.items()}
+    elif plate_concentration == 2:
+        scaled_recipe = {key: value * plates for key, value in max_lifespan_recipe.items()}
     else:
         stock_concentration = get_stock_concentration(plate_concentration)
         auxin_volume, m9_volume = get_m9_auxin_volumes(plate_concentration, total_volume=40)
@@ -80,9 +95,9 @@ while True:
 
     is_lifespan = input('Is this a lifespan plate? (y/n): ').lower() == 'y'
 
-    if plate_concentration > 2 or plate_concentration < 0:
+    """ if plate_concentration > 2 or plate_concentration < 0:
         print(f'Error: Plate concentration must be between 0 and 2mM.')
-        continue
+        continue """
 
     if is_lifespan:
         result = lifespan_recipe_calculator(plate_concentration, plates)
