@@ -4,7 +4,7 @@
 ## Code Objective
 Objective: Given an input of a desired plate concentration and number of plates, return the recipe for the spiking step of plate making.  
 NOTE: This calculator does not account for pipetting error. In other words, if you really need 10 plates, input a number larger than 10 (to make extra.)  
-Inputs: Desired plate concentration, Number of Plates, Regular v. Lifespan 
+Inputs: Desired plate concentration, Number of Plates, Regular v. Lifespan  
 Output: Spiking drug master mix recipe
 
 
