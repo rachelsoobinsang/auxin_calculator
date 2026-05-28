@@ -2,8 +2,10 @@
 **Rachel Sang**
 
 ## Code Objective
-Objective: Given an input of a desired plate concentration and number of plates, return the recipe for the spiking step of plate making.
-NOTE: This calculator does not account for pipetting error. In other words, if you really need 10 plates, input a number larger than 10 (to make extra.)
+Objective: Given an input of a desired plate concentration and number of plates, return the recipe for the spiking step of plate making.  
+NOTE: This calculator does not account for pipetting error. In other words, if you really need 10 plates, input a number larger than 10 (to make extra.)  
+Inputs: Desired plate concentration, Number of Plates, Regular v. Lifespan 
+Output: Spiking drug master mix recipe
 __
 
 ## How to Run Code
@@ -25,5 +27,4 @@ Follow the on-screen instructions to get your drug recipes.
 
 Once you have finished inputting your desired plates, open your auxin_calculator folder on your Home screen.
 There should be a new folder inside auxin_calculator called outputs. You can find a spreadsheet of every calculation that you just ran.
-
 __
